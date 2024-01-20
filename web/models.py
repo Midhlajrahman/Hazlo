@@ -4,7 +4,6 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-
 class Product(models.Model):
     product_name = models.CharField(max_length=200)
     product_image = models.ImageField(upload_to="product/")
