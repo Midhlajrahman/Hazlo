@@ -1,0 +1,59 @@
+{% load static %}
+<!-- about_section - start
+        ================================================== -->
+<section class="about_section sec_ptb_120">
+  <div class="container">
+    <div class="row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 col-md-6 order-last">
+        <div class="about_image1 wow fadeInRight" data-wow-delay=".1s">
+          <img src="{% static 'web/images/about/img_01.png'%}" alt="image_not_found" style="border-radius:30px">
+          <div class="year_content_wrap text-uppercase">
+            <div class="content_wrap">
+              <span>40 <small>+ years of</small></span>
+              <strong>experience</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="about_content">
+          <div class="section_title text-uppercase">
+            <h2 class="small_title"><i class="fas fa-coffee"></i> about us</h2>
+            <h3 class="big_title wow fadeInUp" data-wow-delay=".1s">
+              Unveiling the Essence of Premium Dust Tea
+            </h3>
+          </div>
+          <p class="wow fadeInUp" data-wow-delay=".2s">
+            HazloTea, a distinguished purveyor of premium Indian teas, invites you on a sensory journey that transcends
+            ordinary tea experiences. Nestled in the heart of Naripparambu, Malappuram, Kerala, HazloTea meticulously
+            curates the finest tea powders from ten renowned estates across India, including Assam, Munnar, Idukki,
+            Wayanad, and Nilgiri. With a legacy spanning four decades, our esteemed owner, a revered government employee
+            and accomplished tea taster, leads a dedicated team committed to delivering an unparalleled tea experience.
+            Our teas, a true testament to Indian craftsmanship, blend the essence of these diverse varieties into a
+            product that captures the spirit of our nation.
+          </p>
+          <p class="wow fadeInUp" data-wow-delay=".2s">
+            At HazloTea, quality is not just a commitment; it's a tradition. Our own unit in Naripparambu, Ponnani,
+            equipped with all necessary licenses, ensures the highest standards of quality and purity. With a range of
+            50 unique tea products, crafted without the need for trademark registration, our state-of-the-art godown
+            preserves the freshness of our teas, offering a one-year expiry that resonates with our discerning
+            customers. HazloTea is not merely a brand; it symbolizes trust, sourcing teas directly from
+            government-approved channels, guaranteeing authenticity and a pesticide-free experience. Embark on an
+            unparalleled tea journey with HazloTea, where tradition meets innovation, and every cup is a celebration of
+            India's finest teas, crafted with passion, expertise, and a commitment to excellence.
+          </p>
+
+          {% if request.resolver_match.url_name != 'about' %}
+          <ul class="btns_group ul_li wow fadeInUp" data-wow-delay=".5s">
+            <li>
+              <a class="btn btn_primary text-uppercase" href="{% url 'web:about' %}">About more</a>
+            </li>
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- about_section - end
+          ================================================== -->

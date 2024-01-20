@@ -1,0 +1,104 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- breadcrumb_section - start
+================================================== -->
+<section class="breadcrumb_section text-uppercase"
+  style="background-image: url({% static 'web/images/breadcrumb/breadcrumb_bg_01.jpg' %});">
+
+  <div class="container">
+    <h1 class="page_title text-white wow fadeInUp" data-wow-delay=".1s">About us</h1>
+    <ul class="breadcrumb_nav ul_li wow fadeInUp" data-wow-delay=".2s">
+      <li><a href="{% url "web:index" %}"><i class="fas fa-home"></i> Home</a></li>
+      <li>About Us</li>
+    </ul>
+  </div>
+  <div class="breadcrumb_icon_wrap">
+    <div class="container">
+      <div class="breadcrumb_icon wow fadeInUp" data-wow-delay=".3s">
+        <img src="{% static 'web/images/feature/icon_01.png'%}" alt="icon_not_found">
+        <span class="bg_shape"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- breadcrumb_section - end
+================================================== -->
+
+<!-- about_section - start
+================================================== -->
+{% include "web/partials/about.html" %}
+<!-- about_section - end
+================================================== -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="feature_primary wow fadeInUp" data-wow-delay=".1s">
+        <div class="item_icon">
+          <span class="item_serial">1</span>
+          <img src="{% static 'web/images/feature/icon_01.png' %}" alt="icon_not_found">
+        </div>
+        <h3 class="item_title text-uppercase">awesomae aroma</h3>
+        <p class="mb-0">
+          A symphony of fragrances, elevating your senses with every invigorating sip
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="feature_primary wow fadeInUp" data-wow-delay=".2s">
+        <div class="item_icon">
+          <span class="item_serial">2</span>
+          <img src="{% static 'web/images/feature/icon_02.png' %}" alt="icon_not_found">
+        </div>
+        <h3 class="item_title text-uppercase">high quality</h3>
+        <p class="mb-0">
+          HazloTea delivers a sip of excellence with unparalleled high quality.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="feature_primary wow fadeInUp" data-wow-delay=".3s">
+        <div class="item_icon">
+          <span class="item_serial">3</span>
+          <img src="{% static 'web/images/feature/icon_03.png' %}" alt="icon_not_found">
+        </div>
+        <h3 class="item_title text-uppercase">pure Ingredience</h3>
+        <p class="mb-0">
+          Elevating quality with pristine, unadulterated components for a premium experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="feature_primary wow fadeInUp" data-wow-delay=".4s">
+        <div class="item_icon">
+          <span class="item_serial">4</span>
+          <img src="{% static 'web/images/feature/icon_04.png' %}" alt="icon_not_found">
+        </div>
+        <h3 class="item_title text-uppercase">proper packaging</h3>
+        <p class="mb-0">
+          HazloTea ensures freshness through meticulous, eco-friendly packaging practices.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- testimonial_section - start
+        ================================================== -->
+{% include "web/partials/testimonial.html" %}
+<!-- testimonial_section - end
+================================================== -->
+<!-- faq_section - start
+================================================== -->
+{% include "web/partials/faq.html" %}
+<!-- faq_section - end
+================================================== -->
+</main>
+<!-- main body - end
+================================================== -->
+{% endblock %}

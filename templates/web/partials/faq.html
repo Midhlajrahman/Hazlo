@@ -1,0 +1,33 @@
+{% load static %}
+
+<!--  faq_section - start
+    ==================================================  -->
+<section class="faq_section sec_ptb_120 bg_default_gray">
+  <div class="container">
+    <div class="section_title text-uppercase">
+      <h2 class="small_title"><i class="fas fa-coffee"></i>Frequently Asked Questions</h2>
+      <h3 class="big_title wow fadeInUp" data-wow-delay=".1s">Explore HazloTea</h3>
+    </div>
+    <div class="row">
+      <div class="">
+        <div class="faq_accordion" id="faq_accordion">
+          {% for faq in faqs %}
+          <div class="accordion-item wow fadeInUp" data-wow-delay=".1s">
+            <h3 class="accordion-header" id="faq_heading{{ forloop.counter }}"><button class="collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq_collapse{{ forloop.counter }}" aria-expanded="false"
+                aria-controls="faq_collapse{{ forloop.counter }}">{{ faq.title }}</button></h3>
+            <div id="faq_collapse{{ forloop.counter }}" class="collapse"
+              aria-labelledby="faq_heading{{ forloop.counter }}" data-bs-parent="#faq_accordion">
+              <div class="accordion-body pt-0">
+                <p class="mb-0">{{ faq.description }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--  faq_section - end
+==================================================  -->

@@ -1,0 +1,20 @@
+{% for update in updates %}
+<div class="col-lg-4 col-md-6 col-sm-6">
+  <div class="blog_grid wow fadeInUp" data-wow-delay=".1s">
+    <a class="item_image" href="{{ update.get_absolute_url }}">
+      <img src="{{ update.image.url }}" alt="image_not_found">
+    </a>
+    <div class="item_content">
+      <h3 class="item_title text-uppercase">
+        <a href="{{ update.get_absolute_url }}">{{ update.title }}</a>
+      </h3>
+      <p>{{ update.description|truncatechars:112 }}</p>
+      <a class="btn_text text-uppercase" href="{{ update.get_absolute_url }}"><span>Read More</span> <i
+          class="far fa-angle-double-right"></i></a>
+      <ul class="post_meta ul_li">
+
+      </ul>
+    </div>
+  </div>
+</div>
+{% endfor %}

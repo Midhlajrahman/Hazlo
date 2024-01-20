@@ -1,0 +1,89 @@
+{% load static %}
+<!-- header_section - start
+      ================================================== -->
+<header class="header_section">
+  <div class="content_wrap">
+    <div class="container maxw_1560">
+      <div class="row align-items-center">
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <div class="brand_logo">
+            <a class="brand_link" href="{% url "web:index" %}">
+              <img src="{% static 'web/images/logo/logo_white_1x.png'%}"
+                srcset="{% static 'web/images/logo/logo_white_2x.png'%} 2x" alt="logo_not_found">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-10 col-md-6 col-6">
+          <nav class="main_menu navbar navbar-expand-lg">
+            <button class="mobile_menu_btn navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#main_menu_dropdown" aria-controls="main_menu_dropdown" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"><i class="fal fa-bars"></i></span>
+            </button>
+            <div class="main_menu_inner collapse navbar-collapse" id="main_menu_dropdown">
+              <ul class="main_menu_list ul_li">
+                <li>
+                  <a class="nav-link" href="{% url "web:index" %}">
+                    Home
+                  </a>
+
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'web:about' %}">About</a>
+
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'web:products'%}">
+                    Products
+                  </a>
+
+                </li>
+
+                <li>
+                  <a class="nav-link" href="{% url 'web:blog' %}">
+                    Updates
+                  </a>
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'web:gallery' %}">Gallery</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="{% url 'web:contact' %}">Contact us</a>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="header_btns_group ul_li_right">
+              <li>
+
+
+              <li>
+                <a class="btn btn_primary text-uppercase" href="{% url 'web:contact' %}">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- collapse search - start -->
+  <div class="main_search_collapse collapse" id="main_search_collapse">
+    <div class="main_search_form card">
+      <div class="container maxw_1560">
+        <form action="#">
+          <div class="form_item">
+            <input type="search" name="search" placeholder="Search here...">
+            <button type="submit" class="submit_btn"><i class="fal fa-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- collapse search - end -->
+</header>
+<!-- header_section - end
+      ================================================== -->

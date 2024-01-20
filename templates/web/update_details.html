@@ -1,0 +1,81 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!-- breadcrumb_section - start
+================================================== -->
+<section class="breadcrumb_section text-uppercase"
+  style="background-image: url({% static 'web/images/breadcrumb/breadcrumb_bg_01.jpg'%});">
+  <div class="container">
+    <h1 class="page_title text-white wow fadeInUp" data-wow-delay=".1s">Blog Details</h1>
+    <ul class="breadcrumb_nav ul_li wow fadeInUp" data-wow-delay=".2s">
+      <li><a href="{% url "web:index" %}"><i class="fas fa-home"></i> Home</a></li>
+      <li>Blog Details</li>
+    </ul>
+  </div>
+  <div class="breadcrumb_icon_wrap">
+    <div class="container">
+      <div class="breadcrumb_icon wow fadeInUp" data-wow-delay=".3s">
+        <img src="{% static 'web/images/feature/icon_01.png'%}" alt="icon_not_found">
+        <span class="bg_shape"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- breadcrumb_section - end
+================================================== -->
+
+<!-- details_section - start
+================================================== -->
+<section class="details_section blog_details sec_ptb_120 bg_default_gray">
+  <div class="container">
+    <div class="row justify-content-lg-between justify-content-md-center justify-content-sm-center">
+
+      <div class="col-lg-8 col-md-8">
+        <div class="details_content mb-0">
+          <div class="details_image wow fadeInUp " data-wow-delay=".1s">
+            <img src="{{update.image.url}}" alt="image_not_found" class="image">
+          </div>
+          <div class="wrap_space">
+            <ul class="post_meta ul_li wow fadeInUp" data-wow-delay=".1s">
+              <li><i class="fal fa-calendar-alt"></i>{{update.date}}</li>
+            </ul>
+            <h2 class="details_title text-uppercase wow fadeInUp" data-wow-delay=".1s">{{update.title}}</h2>
+            <p class="wow fadeInUp" data-wow-delay=".1s">
+              {{update.description}}
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-8">
+        <aside class="sidebar_section">
+
+          <div class="sb_widget sb_popular_post wow fadeInUp" data-wow-delay=".1s">
+            <h3 class="sb_widget_title text-uppercase">Popular post</h3>
+            {% for other in other_updates %}
+            <div class="recent_post">
+              <a class="item_image" href="{{ other.get_absolute_url }}">
+                <img src="{{other.image.url}}" alt="image_not_found">
+              </a>
+              <div class="item_content">
+                <h4 class="item_title">
+                  <a href="{{ update.get_absolute_url }}">{{other.title}}</a>
+                </h4>
+                <span class="post_date text-uppercase">{{other.date}}</span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- details_section - end
+================================================== -->
+
+</main>
+<!-- main body - end
+================================================== -->
+{% endblock %}

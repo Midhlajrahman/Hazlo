@@ -1,0 +1,41 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!-- breadcrumb_section - start
+================================================== -->
+<section class="breadcrumb_section text-uppercase"
+	style="background-image: url({% static 'web/images/breadcrumb/breadcrumb_bg_01.jpg'%});">
+	<div class="container">
+		<h1 class="page_title text-white wow fadeInUp" data-wow-delay=".1s">Gallery</h1>
+		<ul class="breadcrumb_nav ul_li wow fadeInUp" data-wow-delay=".2s">
+			<li><a href="{% url "web:index" %}"><i class="fas fa-home"></i> Home</a></li>
+			<li>Gallry</li>
+		</ul>
+	</div>
+	<div class="breadcrumb_icon_wrap">
+		<div class="container">
+			<div class="breadcrumb_icon wow fadeInUp" data-wow-delay=".3s">
+				<img src="{% static 'web/images/feature/icon_01.png'%}" alt="icon_not_found">
+				<span class="bg_shape"></span>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- breadcrumb_section - end
+================================================== -->
+<div class="container mt-5">
+	<div class="sb_widget sb_photo_showcase wow fadeInUp" data-wow-delay=".1s">
+		<h3 class="sb_widget_title text-uppercase">Photo Showcase</h3>
+		<ul class="ul_li zoom-gallery">
+			{% for gallery in gallerys %}
+			<li>
+				<a class="popup_image image" href="{{gallery.image.url}}">
+					<img src="{{gallery.image.url}}" alt="image_not_found">
+				</a>
+			</li>
+			{% endfor %}
+
+		</ul>
+	</div>
+</div>
+{% endblock %}

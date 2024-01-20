@@ -1,0 +1,62 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+<!-- breadcrumb_section - start
+  ================================================== -->
+<section class="breadcrumb_section text-uppercase"
+  style="background-image: url({% static 'web/images/breadcrumb/breadcrumb_bg_01.jpg'%});">
+  <div class="container">
+    <h1 class="page_title text-white wow fadeInUp" data-wow-delay=".1s">Updates</h1>
+    <ul class="breadcrumb_nav ul_li wow fadeInUp" data-wow-delay=".2s">
+      <li><a href="{% url "web:index" %}"><i class="fas fa-home"></i> Home</a></li>
+      <li>Our Updates</li>
+    </ul>
+  </div>
+  <div class="breadcrumb_icon_wrap">
+    <div class="container">
+      <div class="breadcrumb_icon wow fadeInUp" data-wow-delay=".3s">
+        <img src="{% static 'web/images/feature/icon_01.png'%}" alt="icon_not_found">
+        <span class="bg_shape"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- breadcrumb_section - end
+  ================================================== -->
+<!-- blog_section - start
+================================================== -->
+<section class="blog_section sec_ptb_120"
+  style="background-image: url({% static 'web/images/backgrounds/bg_03.png'%});">
+  <div class="container">
+
+    <div class="section_title text-uppercase text-center">
+      <h2 class="small_title wow fadeInUp" data-wow-delay=".1s"><i class="fas fa-coffee"></i> News & Blog</h2>
+      <h3 class="big_title wow fadeInUp" data-wow-delay=".2s">Latest news & Updated</h3>
+    </div>
+    <div class="row justify-content-center">
+      {% for update in updates %}
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="blog_grid wow fadeInUp" data-wow-delay=".1s">
+          <a class="item_image" href="{{ update.get_absolute_url }}">
+            <img src="{{ update.image.url }}" alt="image_not_found">
+          </a>
+          <div class="item_content">
+            <h3 class="item_title text-uppercase">
+              <a href="{{ update.get_absolute_url }}">{{ update.title }}</a>
+            </h3>
+            <p>{{ update.description|truncatechars:112 }}</p>
+            <a class="btn_text text-uppercase" href="{{ update.get_absolute_url }}"><span>Read More</span> <i
+                class="far fa-angle-double-right"></i></a>
+            <ul class="post_meta ul_li">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+</section>
+<!-- blog_section - end -->
+{% endblock %}

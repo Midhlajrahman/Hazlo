@@ -1,0 +1,102 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- breadcrumb_section - start
+================================================== -->
+<section class="breadcrumb_section text-uppercase"
+  style="background-image: url({% static 'web/images/breadcrumb/breadcrumb_bg_01.jpg'%});">
+  <div class="container">
+    <h1 class="page_title text-white wow fadeInUp" data-wow-delay=".1s">Contact Us</h1>
+    <ul class="breadcrumb_nav ul_li wow fadeInUp" data-wow-delay=".2s">
+      <li><a href="{% url "web:index" %}"><i class="fas fa-home"></i> Home</a></li>
+      <li>Contact Us</li>
+    </ul>
+  </div>
+  <div class="breadcrumb_icon_wrap">
+    <div class="container">
+      <div class="breadcrumb_icon wow fadeInUp" data-wow-delay=".3s">
+        <img src="{% static 'web/images/feature/icon_01.png'%}" alt="icon_not_found">
+        <span class="bg_shape"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- breadcrumb_section - end
+================================================== -->
+
+<!-- contact_section - start
+================================================== -->
+<section class="contact_section sec_ptb_120 bg_default_gray">
+  <div class="container">
+    <div class="contact_form bg_white wow fadeInUp" data-wow-delay=".1s">
+      <div class="main_contact_info_wrap">
+        <div class="contact_info_item">
+          <div class="item_icon"><i class="fal fa-envelope"></i></div>
+          <div class="item_content">
+            <h3 class="item_title text-uppercase">Email Adress</h3>
+            <p>customercare@hazlotea.in</p>
+          </div>
+        </div>
+        <div class="contact_info_item">
+          <div class="item_icon"><i class="fal fa-map-marker-alt"></i></div>
+          <div class="item_content">
+            <h3 class="item_title text-uppercase">Our Location</h3>
+            <p>16/166 A, B, Vailippetathara, Naripparambu,Ponnani Malappuram,Kerala</p>
+            <p>679573</p>
+          </div>
+        </div>
+        <div class="contact_info_item">
+          <div class="item_icon"><i class="fal fa-phone"></i></div>
+          <div class="item_content">
+            <h3 class="item_title text-uppercase">Phone Number</h3>
+            <p>+91 80785 68422</p>
+            {% comment %} <p>(88) 908 675 43667</p> {% endcomment %}
+          </div>
+        </div>
+      </div>
+      <form method="post" class="ajax reload">
+        {% csrf_token %}
+        <div class="row">
+          <div class="form_item col-lg-6">
+            {{ form.name }}
+          </div>
+          <div class="col-lg-6 form_item">
+            {{ form.email }}
+          </div>
+        </div>
+        <div class="form_item ">
+          {{ form.subject }}
+        </div>
+        <div class="form_item">
+          {{ form.message }}
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn_primary text-uppercase">Send massage</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- contact_section - end
+================================================== -->
+
+<!-- google map - start
+================================================== -->
+<div class="map_section">
+  <div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31356.139610695536!2d75.91337163845995!3d10.771623829783291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7bb1601fb4fc1%3A0xf4730e353e45b9e1!2sPonnani%2C%20Kerala!5e0!3m2!1sen!2sin!4v1705660500447!5m2!1sen!2sin"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+</div>
+<!-- google map - end
+================================================== -->
+
+</main>
+<!-- main body - end
+================================================== -->
+
+{% endblock %}

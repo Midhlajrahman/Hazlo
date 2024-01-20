@@ -1,0 +1,45 @@
+{% load static %}
+<section class="testimonial_section sec_ptb_120 deco_wrap">
+  <div class="container">
+    <div class="testimonial_slider wow fadeInUp" data-wow-delay=".2s">
+      {% for testimonial in testimonials %}
+      <div class="testimonial_item_1 slider_item">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="item_image">
+              <img src="{{testimonial.image.url}}" alt="image_not_found" class="image">
+              <div class="quote_icon">
+                <img src="{% static 'web/images/testimonial/icon_01.png'%}" alt="image_not_found">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 testimonial_slider">
+            <div class="item_content">
+              <div class="section_title text-uppercase">
+                <h3 class="small_title"><i class="fas fa-coffee"></i> Client Testimonial</h3>
+                <h4 class="big_title">
+                  {{testimonial.title}}
+                </h4>
+              </div>
+              <p>
+                {{testimonial.description}}
+              </p>
+              <div class="testimonial_admin text-uppercase">
+                <h5 class="admin_name">{{testimonial.name}}</h5>
+                <ul class="rating_star ul_li">
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="fas fa-star"></i></li>
+                  <li><i class="far fa-star"></i></li>
+                </ul>
+                <span class="admin_title">{{testimonial.position}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

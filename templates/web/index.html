@@ -1,0 +1,188 @@
+{% extends 'web/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- slider_section - start
+================================================== -->
+<section class="slider_section slider_dark"
+  style="background-image: url({% static 'web/images/backgrounds/bg_01.png'%});">
+  <div class="main_slider pb-0 wow fadeInUp" data-wow-delay=".1s">
+    <div class="slider_item text-white" style="background-image: url({% static 'web/images/slider/img_01.png'%});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-lg-start justify-content-md-center">
+          <div class="col-lg-6 col-md-8">
+            <h3 class="title_text text-white text-uppercase" data-animation="fadeInUp" data-delay=".2s">
+              A Taste of India's Finest
+            </h3>
+            <p data-animation="fadeInUp" data-delay=".4s">
+              Indulge in the rich flavors and health benefits of HazloTea, where tradition meets innovation in every
+              sip.
+            </p>
+            <ul class="btns_group ul_li" data-animation="fadeInUp" data-delay=".6s">
+              <li><a class="btn btn_primary text-uppercase" href="{% url "web:products" %}">testy tea</a></li>
+              <li><a class="btn btn_border border_white text-uppercase" href="{% url "web:about" %}">About more</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="shape_image">
+        <img src="{% static 'web/images/slider/shape_01.png'%}" alt="image_not_found">
+      </div>
+    </div>
+  </div>
+  <div class="slider_social_wrap">
+    <div class="container maxw_1560">
+      <div class="row align-items-center justify-content-lg-between">
+
+        <div class="col-lg-6 col-md-8">
+          <ul class="social_links social_text ul_li text-uppercase wow fadeInLeft">
+            <li><a href="https://www.facebook.com/Hazlotasteofindia" target="_blank"><i class="fab fa-facebook-f"></i>
+                facebook</a></li>
+            <li><a href="https://twitter.com/HazloTea" target="_blank"><i class="fab fa-twitter"></i> twitter</a></li>
+            <li><a href="https://www.instagram.com/hazlo.india/" target="_blank"><i class="fab fa-instagram"></i>
+                instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- slider_section - end
+================================================== -->
+
+<!-- about_section - start
+================================================== -->
+{% include "web/partials/about.html" %}
+<!-- about_section - end
+================================================== -->
+
+<section class="about_section sec_ptb_120">
+  <div class="container">
+    <div class="row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 col-md-6">
+        <div class="about_image2 wow fadeInUp" data-wow-delay=".1s">
+          <img src="{% static 'web/images/about/img_02.png'%}" alt="image_not_found" style="border-radius: 30px;">
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-5">
+        <div class="about_content">
+          <div class="section_title text-uppercase">
+            <h2 class="small_title wow fadeInUp" data-wow-delay=".1s"><i class="fas fa-coffee"></i> what we offer</h2>
+            <h3 class="big_title wow fadeInUp" data-wow-delay=".2s">
+              <u>Elevating Experience</u>
+            </h3>
+          </div>
+          <p class="wow fadeInUp" data-wow-delay=".3s">
+            HazloTea introduces a collection that goes beyond mere beverages, offering an unparalleled journey through
+            the rich tapestry of India's finest teas. Our range, meticulously curated from ten renowned estates across
+            Assam, Munnar, Idukki, Wayanad, and Nilgiri, embodies a commitment to quality and craftsmanship, creating a
+            harmonious symphony of flavors for tea enthusiasts
+          </p>
+          <ul class="about_info ul_li_block">
+            <li class="wow fadeInUp" data-wow-delay=".3s">
+              <h4 class="text-uppercase"><i class="far fa-arrow-right"></i>Diverse Selections, One Exceptional Standard
+              </h4>
+              <p class="mb-0">
+
+                Discover 50 unique tea blends at HazloTea, meticulously curated from diverse Indian estates. From robust
+                Assams to delicate Nilgiris, each cup embodies the essence of our nation's rich tea heritage.
+              </p>
+            </li>
+            <li class="wow fadeInUp" data-wow-delay=".4s">
+              <h4 class="text-uppercase"><i class="far fa-arrow-right"></i> Preserving Freshness with Precision</h4>
+              <p class="mb-0">
+                HazloTea's excellence shines in Naripparambu, Ponnani, with licensed facilities preserving freshness for
+                a one-year expiry. More than a brand, HazloTea is an extraordinary invitation to blend tradition and
+                innovation in every exceptional tea sip.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- shop_section - start
+================================================== -->
+<section class="shop_section sec_ptb_120 bg_gray">
+  <div class="container">
+    <div class="section_title text-uppercase">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-8">
+          <h2 class="small_title wow fadeInUp" data-wow-delay=".1s"><i class="fas fa-coffee"></i> special online shop
+          </h2>
+          <h3 class="big_title wow fadeInUp" data-wow-delay=".2s">
+            Our popular product
+          </h3>
+        </div>
+
+        <div class="col-lg-6 col-md-4">
+          <div class="abtn_wrap text-lg-end text-md-end wow fadeInUp" data-wow-delay=".3s">
+            <a class="btn btn_border border_black" href="{% url "web:products" %}">See all product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      {% for product in products %}
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="shop_card wow fadeInUp" data-wow-delay=".3s">
+
+          <a class="item_image" href="{{ product.get_absolute_url }}">
+            <img src="{{ product.product_image.url }}" alt="image_not_found">
+          </a>
+          <div class="item_content">
+            <h3 class="item_title text-uppercase">
+              <a href="{{ product.get_absolute_url }}">{{ product.product_name }}</a>
+            </h3>
+            <div class="btns_group">
+              <a href="{{ product.get_absolute_url }}">
+                <button class="item_price bg_default_brown" type="submit">View More</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- shop_section - end
+================================================== -->
+
+<!-- blog_section - start
+================================================== -->
+<section class="blog_section sec_ptb_120"
+  style="background-image: url({% static 'web/images/backgrounds/bg_03.png'%});">
+  <div class="container">
+
+    <div class="section_title text-uppercase text-center">
+      <h2 class="small_title wow fadeInUp" data-wow-delay=".1s"><i class="fas fa-coffee"></i> News & Updates</h2>
+      <h3 class="big_title wow fadeInUp" data-wow-delay=".2s">Latest news & Updates</h3>
+    </div>
+
+    <div class="row justify-content-center">
+      {% include "web/partials/updates.html" %}
+    </div>
+
+    <div class="load_more text-center wow fadeInUp" data-wow-delay=".1s">
+      <a class="btn btn_border border_black text-uppercase" href="{% url 'web:blog' %}">See all Updates</a>
+    </div>
+
+  </div>
+</section>
+<!-- blog_section - end
+================================================== -->
+<!-- testimonial_section - start
+================================================== -->
+{% include "web/partials/testimonial.html" %}
+<!-- testimonial_section - end
+================================================== -->
+</main>
+<!-- main body - end
+================================================== -->
+{% endblock %}
